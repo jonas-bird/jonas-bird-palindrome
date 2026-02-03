@@ -23,7 +23,11 @@ function Phrase(content) {
 
   // Returns true if the phrase is a palindrome, false otherwise
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    if (this.processedContent().length === 0) {
+      return false;
+    } else {
+      return this.processedContent() === this.processedContent().reverse();
+    }
   };
 
   this.louder = function () {
